@@ -1,0 +1,15 @@
+<!-- TEMPLATES ARE DYNAMIC HTML IN DJANGO -->
+{% if latest_question_list %}
+    <ul>
+        {% for question in latest_question_list %}
+        <li>
+            <!-- 'detail'  comes from polls.urls -> path('<int:question_id>/', views.detail, name='detail'-->
+            <!-- more specifically, it comes from name='detail--> 
+            <!-- 'polls:detail' means look in polls app, get detail-->
+            <a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}

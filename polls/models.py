@@ -3,6 +3,7 @@ import datetime
 from django.db import models
 from django.utils import timezone
 
+# models are the groups you can update, like 'cards'
 class Question(models.Model):
     #CharField: character fields. required args: max_length
     #DateTimeField: date fields
