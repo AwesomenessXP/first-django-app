@@ -24,3 +24,14 @@ class Choice(models.Model):
 
     def __str__(self):
         return self.choice_text
+
+class Player (models.Model):
+    game_tag = models.CharField(max_length=50)
+    uID = models.IntegerField(default=0)
+    # player variable means this is attached to player class
+    character_main = models.CharField(max_length=50, default = '')
+    characters_obtained = models.IntegerField(default=0)
+    days_played = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.game_tag
